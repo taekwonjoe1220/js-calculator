@@ -4,13 +4,56 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
     <title>JS Calculator</title>
   </head>
   <body>
     <div class="main-container">
-        <div class="display"></div>
-        <div class="keys"></div>
+        <div class="display">0</div>
+        <div class="keys">
+          <!-- Keys to consider:
+          0 - 9
+          decimal
+          operators:  + - / *
+          equals
+          +/- (positive / negative)
+          %
+          clear-->
+          <!-- clear, +/-, and % row -->
+ 
+          <div class="left">
+            <div class="ancillary">
+              <div class="key clear">AC</div>
+              <div class="key plus-minus">+/-</div>
+              <div class="key percent">%</div>
+            </div>
+            <div class="numpad">
+              <div class="key seven">7 </div>
+              <div class="key eight">8</div>
+              <div class="key nine">9</div>
+              <div class="key four">4</div>
+              <div class="key five">5</div>
+              <div class="key six">6</div>
+              <div class="key one">1</div>
+              <div class="key two">2</div>
+              <div class="key three">3</div>
+              <div class="key zero">0</div>
+              <div class="key decimal">.</div>
+            </div>
+          </div>
+          <div class="operators">
+            <div class="key divide">&divide;</div>
+            <div class="key multiply">X</div>
+            <div class="key subtract">-</div>
+            <div class="key add">+</div>
+            <div class="key equals">=</div>
+          </div>
+
+    
+
+        </div>
     </div>
     </div>
+    <script src="calculator.js"></script>
   </body>
 </html>
