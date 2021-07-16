@@ -32,7 +32,8 @@ body {
   display: grid;
   grid-template-columns: 75% 25%;
 }
-.key {
+.key,
+.num {
   background: #333;
   color: #f4f4f4;
   border-radius: 100%;
@@ -57,10 +58,11 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-.numpad .key,
+.numpad .num,
 .ancillary .key,
 .operators .key {
   justify-self: center;
+  cursor: pointer;
 }
 
 .operators {
