@@ -25,6 +25,7 @@ body {
   align-items: flex-end;
   font-size: 4rem;
   padding: 0 1rem;
+  font-family: monospace;
 }
 
 .keys {
@@ -33,7 +34,8 @@ body {
   grid-template-columns: 75% 25%;
 }
 .key,
-.num {
+.num,
+.decimal {
   background: #333;
   color: #f4f4f4;
   border-radius: 100%;
@@ -59,6 +61,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 .numpad .num,
+.numpad .decimal,
 .ancillary .key,
 .operators .key {
   justify-self: center;
