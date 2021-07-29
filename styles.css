@@ -11,8 +11,8 @@ body {
 .main-container {
   margin: 75px auto;
   width: 400px;
-  height: 630px;
-  background: black;
+  height: 620px;
+  background: #010101;
   border-radius: 10px;
 }
 
@@ -32,6 +32,7 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: 75% 25%;
+  padding: 0 1rem;
 }
 .key,
 .num,
