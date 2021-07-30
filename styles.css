@@ -26,6 +26,7 @@ body {
   font-size: 4rem;
   padding: 0 1rem;
   font-family: monospace;
+  overflow: hidden;
 }
 
 .keys {
