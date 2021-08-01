@@ -78,53 +78,27 @@ function operate(a, b, operator) {
 
 // addition
 add.addEventListener("click", () => {
-  if (operation == null) {
-    value1 = getValue();
-  } else {
-    value2 = getValue();
-    operate(value1, value2, operation);
-    display.textContent = result;
-    value1 = display.textContent;
-  }
+  checkOperation();
+
   operation = "addition";
   hasTyped = false;
 });
 // subtraction
 subtract.addEventListener("click", () => {
-  if (operation == null) {
-    value1 = getValue();
-  } else {
-    value2 = getValue();
-    operate(value1, value2, operation);
-    display.textContent = result;
-    value1 = display.textContent;
-  }
+  checkOperation();
+
   operation = "subtraction";
   hasTyped = false;
 });
 // multiplication
 multiply.addEventListener("click", () => {
-  if (operation == null) {
-    value1 = getValue();
-  } else {
-    value2 = getValue();
-    operate(value1, value2, operation);
-    display.textContent = result;
-    value1 = display.textContent;
-  }
+  checkOperation();
   operation = "multiplication";
   hasTyped = false;
 });
 // division
 divide.addEventListener("click", () => {
-  if (operation == null) {
-    value1 = getValue();
-  } else {
-    value2 = getValue();
-    operate(value1, value2, operation);
-    display.textContent = result;
-    value1 = display.textContent;
-  }
+  checkOperation();
   operation = "division";
   hasTyped = false;
 });
@@ -135,9 +109,16 @@ equals.addEventListener("click", () => {
   } else {
     value2 = getValue();
     operate(value1, value2, operation);
+    value1 = result;
+    if (String(result).length > 9 && String(result).includes(".")) {
+      result = shorten(result);
+    } else if (String(result).length > 9) {
+      // do something with big numbers!!!!!
+      result = Number(result).toExponential(4);
+    }
     display.textContent = result;
-    value1 = display.textContent;
   }
+  operation = null;
 });
 
 // +/- toggle
@@ -154,3 +135,22 @@ clear.addEventListener("click", () => {
   display.textContent = "0";
   hasTyped = false;
 });
+
+function shorten(value) {
+  // return value with digit length of 9
+  return Number(String(value).slice(0, 9));
+}
+
+function checkOperation() {
+  if (operation == null) {
+    value1 = getValue();
+  } else {
+    value2 = getValue();
+    operate(value1, value2, operation); // update result value
+    value1 = result;
+    if (String(result).length > 9 && result.includes(".")) {
+      result = shorten(result);
+    }
+    display.textContent = result;
+  }
+}
